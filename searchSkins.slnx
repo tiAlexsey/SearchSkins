@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/External/">
+    <Project Path="External\LisSkins.Client\LisSkins.Client.csproj" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".dockerignore" />
+    <File Path=".gitignore" />
+    <File Path="Dockerfile" />
+  </Folder>
+  <Project Path="Application/Application.csproj" />
+  <Project Path="Domain/Domain.csproj" />
+  <Project Path="Infrastructure/Infrastructure.csproj" />
+  <Project Path="WebApi/WebApi.csproj" />
+</Solution>
