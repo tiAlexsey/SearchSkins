@@ -48,7 +48,7 @@ public record SkinItem(
     [property: JsonPropertyName("unlock_at")]
     DateTime? UnlockAt,
     [property: JsonPropertyName("item_class_id")]
-    decimal ClassId,
+    string? ClassId,
     [property: JsonPropertyName("created_at")]
     DateTime? CreatedAt,
     [property: JsonPropertyName("item_float")]
