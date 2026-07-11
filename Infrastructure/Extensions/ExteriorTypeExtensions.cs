@@ -1,4 +1,4 @@
-using Application.Features.Items;
+using Application.Features.Items.FindItems;
 
 namespace Infrastructure.Extensions;
 

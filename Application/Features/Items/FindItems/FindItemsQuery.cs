@@ -1,4 +1,4 @@
-namespace Application.Features.Items;
+namespace Application.Features.Items.FindItems;
 
 /// /// <summary>
 /// Find skin items request.

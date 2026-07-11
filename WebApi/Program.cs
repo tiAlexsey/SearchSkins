@@ -1,3 +1,4 @@
+using System.Reflection;
 using System.Text.Json.Serialization;
 using Infrastructure;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -7,11 +8,12 @@ using WebApi.Extensions;
 using WebApi.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
+var authCookieName = $"FindSkin_{Assembly.GetAssembly(typeof(Program))?.GetName().Version}";
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
-        options.Cookie.Name = "FindSkin_Auth";
+        options.Cookie.Name = authCookieName;
         options.Cookie.HttpOnly = true;
         options.Cookie.SameSite = SameSiteMode.Strict;
 
@@ -39,30 +41,16 @@ builder.Services
     {
         options.AddDocumentTransformer((document, _, _) =>
         {
-            document.Servers.Clear();
+            document.Servers?.Clear();
             document.Components ??= new OpenApiComponents();
 
-            document.Components.SecuritySchemes.Add("FindSkin_Auth", new OpenApiSecurityScheme
+            document.Components.SecuritySchemes?.Add(authCookieName, new OpenApiSecurityScheme
             {
                 Type = SecuritySchemeType.ApiKey,
                 In = ParameterLocation.Cookie,
-                Name = "YourAppAuthCookie"
+                Name = authCookieName
             });
 
-            document.SecurityRequirements.Add(new OpenApiSecurityRequirement
-            {
-                {
-                    new OpenApiSecurityScheme
-                    {
-                        Reference = new OpenApiReference
-                        {
-                            Type = ReferenceType.SecurityScheme,
-                            Id = "CookieAuth"
-                        }
-                    },
-                    Array.Empty<string>()
-                }
-            });
             return Task.CompletedTask;
         });
     });

@@ -1,5 +1,5 @@
 using Application.Abstractions;
-using Application.Features.Items;
+using Application.Features.Items.FindItems;
 using Domain;
 using Domain.Models;
 using WebApi.Absractions;
@@ -20,7 +20,7 @@ public class TrackEndpoints : IEndpoint
                     MinFloat: null,
                     MaxFloat: null,
                     MinPrice: null,
-                    MaxPrice: 2000,
+                    MaxPrice: 2500,
                     OnlyUnlocked: null,
                     MaxLockDays: null,
                     Seeds:
@@ -83,10 +83,30 @@ public class TrackEndpoints : IEndpoint
                     MaxPrice: null,
                     OnlyUnlocked: null,
                     MaxLockDays: null,
-                    Seeds: "490 148 69 704 567 308",
+                    Seeds: "490 148 69 704",
                     StatTrak: null,
                     Sort: Sort.Price,
                     Exterior: [ExteriorType.Factory_new, ExteriorType.Minimal_wear, ExteriorType.Field_tested]
+                );
+
+                return Results.Ok(await handler.HandleAsync(query, ct));
+            });
+        
+        group.MapGet("/green-glock",
+            async (IHandler<FindItemsQuery, PagedResult<Item>> handler, CancellationToken ct) =>
+            {
+                var query = new FindItemsQuery(
+                    Name: "Glock-18 | Gamma Doppler Emerald",
+                    MinFloat: null,
+                    MaxFloat: null,
+                    MinPrice: null,
+                    MaxPrice: null,
+                    OnlyUnlocked: null,
+                    MaxLockDays: null,
+                    Seeds: null,
+                    StatTrak: null,
+                    Sort: Sort.Price,
+                    Exterior: [ExteriorType.Factory_new, ExteriorType.Minimal_wear]
                 );
 
                 return Results.Ok(await handler.HandleAsync(query, ct));

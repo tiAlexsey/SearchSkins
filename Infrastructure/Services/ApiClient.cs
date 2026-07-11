@@ -1,10 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 using Application.Abstractions;
-using Application.Features.Items;
+using Application.Features.Items.FindItems;
 using Domain.Models;
 using Infrastructure.Extensions;
 using LisSkinsClient.Abstractions;

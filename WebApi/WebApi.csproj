@@ -6,6 +6,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <WarningsAsErrors>true</WarningsAsErrors>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <AssemblyVersion>2026.7.10.0</AssemblyVersion>
     </PropertyGroup>
 
     <ItemGroup>

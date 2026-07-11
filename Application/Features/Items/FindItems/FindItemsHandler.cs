@@ -2,7 +2,7 @@ using Application.Abstractions;
 using Domain;
 using Domain.Models;
 
-namespace Application.Features.Items;
+namespace Application.Features.Items.FindItems;
 
 public class FindItemsHandler(IApiClient apiClient) : IHandler<FindItemsQuery, PagedResult<Item>>
 {

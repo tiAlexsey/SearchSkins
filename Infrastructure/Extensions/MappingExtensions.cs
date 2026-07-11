@@ -1,4 +1,4 @@
-using Application.Features.Items;
+using Application.Features.Items.FindItems;
 using Domain.Models;
 using LisSkinsClient.Model.Requests;
 using LisSkinsClient.Model.Responses;

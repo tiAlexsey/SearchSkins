@@ -11,5 +11,5 @@ public class Item
     public int? Paint { get; set; }
     public string? Tag { get; set; }
     public List<Sticker>? Stickers { get; set; }
-    public string Screenshot => $"https://app.lis-skins.com/ru/market/screenshot/request/{Id}/";
+    public string Screenshot => $"https://lis-skins.com/screenshot/request/{Id}/";
 }

@@ -1,5 +1,5 @@
 using Application.Abstractions;
-using Application.Features.Items;
+using Application.Features.Items.FindItems;
 using Domain;
 using Domain.Models;
 using WebApi.Absractions;
