@@ -46,11 +46,11 @@ public record SkinItem(
     [property: JsonPropertyName("price")]
     decimal Price,
     [property: JsonPropertyName("unlock_at")]
-    DateTime? UnlockAt,
+    string? UnlockAt,
     [property: JsonPropertyName("item_class_id")]
     string? ClassId,
     [property: JsonPropertyName("created_at")]
-    DateTime? CreatedAt,
+    string? CreatedAt,
     [property: JsonPropertyName("item_float")]
     double? Float,
     [property: JsonPropertyName("name_tag")]

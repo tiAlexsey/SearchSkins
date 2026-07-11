@@ -106,7 +106,7 @@ public class TrackEndpoints : IEndpoint
                     Seeds: null,
                     StatTrak: null,
                     Sort: Sort.Price,
-                    Exterior: [ExteriorType.Factory_new, ExteriorType.Minimal_wear]
+                    Exterior: [ExteriorType.Factory_new]
                 );
 
                 return Results.Ok(await handler.HandleAsync(query, ct));
