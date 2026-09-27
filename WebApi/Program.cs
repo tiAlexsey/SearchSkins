@@ -2,7 +2,7 @@ using System.Reflection;
 using System.Text.Json.Serialization;
 using Infrastructure;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 using Scalar.AspNetCore;
 using WebApi.Extensions;
 using WebApi.Middleware;
@@ -60,6 +60,13 @@ app.UseMiddleware<ErrorHandlingMiddleware>();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapOpenApi();
-app.MapScalarApiReference();
+app.MapScalarApiReference("docs", options =>
+{
+    options.Title = "Search skins";
+    options.ShowDeveloperTools = DeveloperToolsVisibility.Never;
+    options.HideClientButton = true;
+    options.DisableAgent();
+    options.DisableMcp();
+});
 app.MapEndpoints();
 app.Run();

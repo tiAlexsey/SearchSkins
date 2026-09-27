@@ -1,5 +1,5 @@
 using System.Reflection;
-using WebApi.Absractions;
+using WebApi.Abstractions;
 
 namespace WebApi.Extensions;
 

@@ -1,4 +1,4 @@
-namespace WebApi.Absractions;
+namespace WebApi.Abstractions;
 
 public interface IEndpoint
 {

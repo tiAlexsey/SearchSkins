@@ -2,7 +2,7 @@ using Application.Abstractions;
 using Application.Features.Items.FindItems;
 using Domain;
 using Domain.Models;
-using WebApi.Absractions;
+using WebApi.Abstractions;
 
 namespace WebApi.Endpoints;
 
@@ -33,7 +33,7 @@ public class TrackEndpoints : IEndpoint
                 return Results.Ok(await handler.HandleAsync(query, ct));
             });
 
-        group.MapGet("/just-vice",
+        group.MapGet("/vice",
             async (IHandler<FindItemsQuery, PagedResult<Item>> handler, CancellationToken ct) =>
             {
                 var query = new FindItemsQuery(
